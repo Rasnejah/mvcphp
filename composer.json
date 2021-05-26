@@ -1,0 +1,23 @@
+{
+    "name": "rasnejah/cursomvc",
+    "description": "Curso de MVC com PHP e Composer - 100% pratico",
+    "authors": [
+        {
+            "name": "Rasneja",
+            "email": "renatososmicro@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": ">=7.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "app\\": "app/",
+            "core\\": "core/"
+        },
+        "files": [
+            "config/config.php"
+        ]
+    }
+}

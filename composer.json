@@ -14,10 +14,10 @@
     "autoload": {
         "psr-4": {
             "app\\": "app/",
-            "core\\": "core/"
+            "core\\": "core/"            
         },
         "files": [
-            "config/config.php"
-        ]
+            "config/config.php"               
+        ]                   
     }
 }

@@ -6,6 +6,6 @@ class Router
 {
     public function __construct()
     {
-        echo "exibindo Router";
+      
     }
 }

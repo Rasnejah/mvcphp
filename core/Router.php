@@ -9,9 +9,12 @@ class Router
     private $param = [];
     public function __construct()
     {
-      $router = $this->url();
-      echo '<pre>';
-      print_r($router);
+        $router = $this->url();
+        if(file_exists('app/controllers/'. ucfirst($router[0]). '.php')): 
+            echo 'arquivo existe';
+        else: 
+            echo 'aruivo nao existe';
+        endif;
     }
 
     private function url()

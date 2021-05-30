@@ -13,4 +13,12 @@ class Site
         $photo = $foto;
         require_once __DIR__ . '/../views/galeria.php';
     }
+    public function cadastro()
+    {       
+        require_once __DIR__ . '/../views/cadastro.php';
+    }
+    public function consulta()
+    {        
+        require_once __DIR__ . '/../views/consulta.php';
+    }
 }

@@ -6,6 +6,10 @@ class Site
 {
     public function home()
     {
-        echo 'este e o metodo home da classe site';
+        require_once __DIR__ . '/../views/home.php';
+    }
+    public function galeria()
+    {
+        require_once __DIR__ . '/../views/galeria.php';
     }
 }

@@ -8,8 +8,9 @@ class Site
     {
         require_once __DIR__ . '/../views/home.php';
     }
-    public function galeria()
+    public function galeria($foto)
     {
+        $photo = $foto;
         require_once __DIR__ . '/../views/galeria.php';
     }
 }

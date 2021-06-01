@@ -14,6 +14,7 @@ class Conection
         try {
             $conn = new \PDO($this->dbName, $this->user, $this->pass);
             $conn->exec("set names utf8");
+            return $conn;
         } catch (\Throwable $error) {
             echo $error->getMessage();
         }

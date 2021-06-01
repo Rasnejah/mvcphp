@@ -19,7 +19,12 @@ class Crud extends Conection
     }
     public function read()
     {
-    
+        $conn =Conection::connect();
+        $sql = "SELECT * FROM tb_person ORDER BY nome";
+        $stmt = $conn->prepare($sql);
+        $stmt->execute();
+        $read = $stmt->fetchAll();
+        return $read;
     }
     public function update()
     {

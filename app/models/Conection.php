@@ -1,8 +1,6 @@
 <?php
-
-require_once("../../init.php");
-
 namespace app\models;
+
 
 class Conection
 {

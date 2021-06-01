@@ -7,20 +7,20 @@ class Crud extends Conection
 {
     public function create()
     {
-        $nome = filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_SPECIAL_CHARS);
+        $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_SPECIAL_CHARS);
         $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
-        $conn = Conection::connect();
-        $sql = "INSERT INTO tb_person VALUES(defaut, :nome, :email)";
+        $sql = 'INSERT INTO tb_person(name, email)  VALUES (?,?)';
+        $conn = $this->connect();
         $stmt = $conn->prepare($sql);
-        $stmt->bindParam(':nome', $nome);
-        $stmt->bindParam(':email', $email);
+        $stmt->bindParam(1, $name);
+        $stmt->bindParam(2, $email);
         $stmt->execute();
         return $stmt;
     }
     public function read()
     {
         $conn =Conection::connect();
-        $sql = "SELECT * FROM tb_person ORDER BY nome";
+        $sql = "SELECT * FROM `tb_person` ORDER BY name";
         $stmt = $conn->prepare($sql);
         $stmt->execute();
         $read = $stmt->fetchAll();

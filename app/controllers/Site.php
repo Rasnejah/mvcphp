@@ -29,12 +29,15 @@ class Site extends Crud
         require_once __DIR__ . '/../views/consulta.php';
     }
     public function editar()
-    {
-        $registration = $this->create();
+    {     
         $editForm = true;
         $title = "Pagina Editar Cadastros";
         $registrationQueryById = $this->fechAllById();
                
         require_once __DIR__ . '/../views/cadastro.php';
+    }
+    public function update(){
+        $update = $this->alterar();
+        header("Location:?router=site/consulta");
     }
 }

@@ -26,9 +26,21 @@ class Crud extends Conection
         $read = $stmt->fetchAll();
         return $read;
     }
-    public function update()
-    {
-    
+    public function alterar()
+    {        
+        $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_SPECIAL_CHARS);
+        $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
+        $id = filter_input(INPUT_POST, 'id', FILTER_SANITIZE_SPECIAL_CHARS);
+
+        $sql = "UPDATE tb_person SET name= :name, email= :email WHERE id= :id";
+        $conn = $this->connect();
+
+        $stmt = $conn->prepare($sql);
+        $stmt->bindParam(":name", $name);
+        $stmt->bindParam(":email", $email);
+        $stmt->bindParam(":id", $id);
+        $stmt->execute();
+        return $stmt;
     }
     public function delete()
     {

@@ -4,7 +4,8 @@
     </div>
     <div class="col s12">       
         <?php if( $editForm):?>
-                    <form action="?router=site/cadastro/" method="POST">
+                    <form action="?router=Site/update/" method="POST">
+                    <input type="hidden" name="id"   value="<?php echo $registrationQueryById[0]['id'] ?>">
                         <div class="input-field col s12">
                             <input type="text" name="name" id="name" required value="<?php echo $registrationQueryById[0]['name'] ?>">
                             <label for="name">Digite seu nome</label>
@@ -15,6 +16,7 @@
                         </div>
                         <div class="input-field col s12">
                             <input type="submit" value="enviar" class="btn-small">
+                            <input type="reset" value="Limpar" class="btn-small red">
                         
                         </div>
                     </form>                       

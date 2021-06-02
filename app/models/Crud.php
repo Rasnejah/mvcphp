@@ -20,7 +20,7 @@ class Crud extends Conection
     public function read()
     {
         $conn =Conection::connect();
-        $sql = "SELECT * FROM `tb_person` ORDER BY name";
+        $sql = "SELECT * FROM tb_person ORDER BY name";
         $stmt = $conn->prepare($sql);
         $stmt->execute();
         $read = $stmt->fetchAll();
@@ -33,6 +33,17 @@ class Crud extends Conection
     public function delete()
     {
     
+    }
+    public function fechAllById()
+    {
+        $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_SPECIAL_CHARS);
+        $sql = 'SELECT * FROM tb_person WHERE id = ?';
+        $conn = $this->connect();
+        $stmt = $conn->prepare($sql);
+        $stmt->bindParam(1,$id);
+        $stmt->execute();
+        $result = $stmt->fetchAll();
+        return $result;
     }
     
 }

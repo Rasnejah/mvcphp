@@ -18,6 +18,8 @@ class Site extends Crud
     public function cadastro()
     {
         $registration = $this->create();
+        $editForm =false;
+        $title = "Pagina de cadastro";
                
         require_once __DIR__ . '/../views/cadastro.php';
     }
@@ -25,5 +27,14 @@ class Site extends Crud
     { 
         $registrationQuery = $this->read();  
         require_once __DIR__ . '/../views/consulta.php';
+    }
+    public function editar()
+    {
+        $registration = $this->create();
+        $editForm = true;
+        $title = "Pagina Editar Cadastros";
+        $registrationQueryById = $this->fechAllById();
+               
+        require_once __DIR__ . '/../views/cadastro.php';
     }
 }

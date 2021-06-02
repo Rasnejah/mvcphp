@@ -40,4 +40,13 @@ class Site extends Crud
         $update = $this->alterar();
         header("Location:?router=site/consulta");
     }
+    public function confirmarExclusao(){
+        $registrationQueryById = $this->fechAllById();
+        
+        require_once __DIR__ . '/../views/confirmarExclusao.php';
+    }
+    public function delete(){
+        $deleteRegister = $this->deleteRegister();
+        header("Location:?router=site/consulta");
+    }
 }

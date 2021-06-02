@@ -17,7 +17,7 @@
                         <td><?php echo $register['email'];?></td>
                         <td>
                             <a href="?router=Site/editar/&id=<?php echo $register['id']?>" class="btn-small">Alterar</a>
-                            <a href="?router=Site/deletar/&id=<?php echo $register['id']?>" class="btn-small red">excluir</a>
+                            <a href="?router=Site/confirmarExclusao/&id=<?php echo $register['id']?>" class="btn-small red">excluir</a>
                         </td>
                     </tr>                   
                 <?php endforeach; ?>

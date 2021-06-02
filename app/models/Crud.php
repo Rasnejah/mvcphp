@@ -42,9 +42,16 @@ class Crud extends Conection
         $stmt->execute();
         return $stmt;
     }
-    public function delete()
+    public function deleteRegister()
     {
-    
+        $id = filter_input(INPUT_POST, 'id', FILTER_SANITIZE_SPECIAL_CHARS); //
+        $sql = "DELETE FROM tb_person WHERE id= ?";
+        $conn = $this->connect();
+
+        $stmt = $conn->prepare($sql);
+        $stmt->bindParam(1, $id);
+        $stmt->execute();
+        return $stmt;
     }
     public function fechAllById()
     {
